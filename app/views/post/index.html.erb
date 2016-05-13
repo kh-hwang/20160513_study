@@ -13,8 +13,28 @@
 	<div class="post">
     
 
-		<div class="replies">
-
-		</div>
-	</div>z
+    <div class="replies">
+      <label>Reply</label>
+      <input type="hidden" value="<%=p.id%>" name="id_of_post">
+			<input type="text" name="reply_content" id="reply_<%=p.id%>" placeholder="Reply">
+      <button value="<%=p.id%>" class="btn btn-default reply_submit" type="submit" value="Submit">Submit</button>
+    </div>
+	</div>
 </div>
+
+<script>
+  $(".reply_submit").click.(function(){
+    post_id = this.value
+    reply_content = $("#reply_" + post_id).val()
+    $.ajax({
+      method: "POST",
+      url: "/post/reply_write",
+      data: { reply_content :reply_content, id_of_post :post_id },
+
+
+    })
+
+
+
+  })
+</script>
