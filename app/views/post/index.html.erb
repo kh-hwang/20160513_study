@@ -1,8 +1,25 @@
 <div class="container">
 	<div class="post"> 
 
-		<div class="replies">
 
-		</div>
+    <div class="replies">
+			<input type="text" id="reply_<%=p.id%>" placeholder="Reply">
+      <input value="<%=p.id%>class="btn btn-default reply_submit" type="submit" value="Submit">
+    </div>
 	</div>
 </div>
+
+<script>
+  $(".reply_submit").click.(function(){
+    post_id = this.value
+    reply_content = $("#reply_" + post_id).val()
+    $.ajax({
+      method: "POST",
+      url: "some.php",
+      data: { name: "John", location: "Boston" }
+    })
+
+
+
+  })
+</script>
