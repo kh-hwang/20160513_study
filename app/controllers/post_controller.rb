@@ -1,5 +1,6 @@
 class PostController < ApplicationController
   def index
+
   end
 
   def reply_write
